@@ -17,13 +17,11 @@ public class HelloWorldController {
     //hello-world bean
     @GetMapping(path = "/hello-world-bean")
     public HelloWorldBean helloWorldBean(){
-        return new HelloWorldBean("Hello Worldd");
+        return new HelloWorldBean("Hello World");
     }
-
 
     @GetMapping(path = "/hello-world/{name}")
     public HelloWorldBean helloWorldBeanPathVariable(@PathVariable String name){
-//        throw new RuntimeException("Something went wrong");
         return new HelloWorldBean(String.format("Hello Worldd, %s", name));
     }
 }
