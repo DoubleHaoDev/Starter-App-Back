@@ -10,7 +10,7 @@ import java.util.List;
 public class TodoHardcoddedService {
 
     private static List<Todo> todos = new ArrayList<>();
-    private static int idCounter = 0;
+    private static Long idCounter = 0l;
 
     static {
         todos.add(new Todo(++idCounter, "Andy", "Learn to code", new Date(), false));
