@@ -32,7 +32,7 @@ public class TodoJpaResource {
     @DeleteMapping(path = "/jpa/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id){
         todoJpaRepository.deleteById(id);
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping(path = "/jpa/users/{username}/todos/{id}")
@@ -46,7 +46,7 @@ public class TodoJpaResource {
     public ResponseEntity<Void> createTodo(@PathVariable String username, @RequestBody Todo todo){
         todo.setUsername(username);
         Todo updatedTodo = todoJpaRepository.save(todo);
-        
+
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(updatedTodo.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
