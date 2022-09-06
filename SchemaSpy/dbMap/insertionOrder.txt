@@ -1,0 +1,8 @@
+elements
+monsters
+roles
+users
+weapons
+user_roles
+weaknesses
+weapon_elements
